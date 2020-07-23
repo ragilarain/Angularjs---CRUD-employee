@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="line">
+      <h3>Tambah Baru</h3>
+    </div>
+    <div class="home">
+      <div class="container">
+        <form class="form-horizontal"  ng-controller="View2Ctrl" >
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4 text-left">
+                <label for="exampleInputName2" style="margin-left: 30px;">Name</label>
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Jane Doe" ng-model="name" required>
+              </div>
+            </div>
+<br>
+            <div class="row" >
+              <div class="col-md-4 text-left">
+                <label for="exampleInputName2" style="margin-left: 30px;">Tanggal Lahir</label>
+              </div>
+              <div class="col-md-5">
+                <input type="text" class="form-control" placeholder="YYYY-MM-DD" ng-model="birthDate" required>
+              </div>
+              <div class="com-md-1">
+                <button><img style="width: 25px; height: 25px;" src="https://img.icons8.com/dotty/50/000000/planner.png"/></button>
+              </div>
+            </div>
+<br>
+            <div class="row" >
+              <div class="col-md-4 text-left">
+                <label style="margin-left: 30px;">Jabatan</label>
+              </div>
+              <div class="col-md-6" >
+                <select class="form-control" ng-model="positionIdTransient" ng-change="something(positionIdTransient)"
+                 ng-options="payload.id as payload.name for payload in value" >
+                </select>
+              </div>
+            </div>    
+<br>
+            <div class="row">
+              <div class="col-md-4 text-left">
+                <label for="exampleInputName2" style="margin-left: 30px;">NIP</label>
+              </div>
+              <div class="col-md-6">
+                <input type="number" class="form-control" placeholder="Jane Doe" ng-model="idNumber" required>
+              </div>
+            </div>
+<br>
+            <div class="row">
+              <div class="col-md-4 text-left">
+                <label for="exampleInputName2" style="margin-left: 30px;">Jenis Kelamin</label>
+              </div>
+              <div class="col-md-6" >
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" ng-model="gender" ng-value="1"> Pria
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" ng-model="gender" ng-value="2"> Wanita
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6" style="left: 350px;">
+              <button type="button" ng-click="postData(name,birthDate,positionIdTransient,idNumber,gender)">Simpan</button>
+            </div>
+            <div class="col-md-6">
+              <button><a href="#!/view1">Kembali</a></button>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+    
+
+</div>

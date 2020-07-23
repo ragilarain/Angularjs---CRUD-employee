@@ -1,0 +1,81 @@
+<div class="container" ng-app="Edit" ng-controller="getEmployeeById">
+    <div class="line">
+      <h3>Edit Employee</h3>
+    </div>
+    <div class="home">
+      <div class="container">
+        <form class="form-horizontal" ng-controller="putEmployee">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4 text-left">
+                <label for="exampleInputName2" style="margin-left: 30px;">Name</label>
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="form-control" value="{{value.name}}"
+                 ng-show="true" required>
+              </div>
+            </div>
+<br>
+            <div class="row">
+              <div class="col-md-4 text-left">
+                <label for="exampleInputName2" style="margin-left: 30px;">Tanggal Lahir</label>
+              </div>
+              <div class="col-md-5">
+                <input type="text" class="form-control" id="exampleInputName2" value="{{value.birthDate}}" placeholder="YYYY-MM-DD" required>
+              </div>
+              <div class="com-md-1">
+                <button><img style="width: 25px; height: 25px;" src="https://img.icons8.com/dotty/50/000000/planner.png"/></button>
+              </div>
+            </div>
+<br>
+            <div class="row" ng-controller="getPositions" >
+              <div class="col-md-4 text-left">
+                <label for="exampleInputName2" style="margin-left: 30px;">Jabatan</label>
+              </div>
+              <div class="col-md-6" >
+                <select class="form-control" id="positionIdTransient" >
+                  <option value="{{value.positionId.id}}" >{{value.positionId.name}}</option>
+                  <option ng-repeat="payload in position">{{payload.name}}</option>
+                </select>
+              </div>
+            </div>  
+<br>
+            <div class="row">
+              <div class="col-md-4 text-left">
+                <label for="exampleInputName2" style="margin-left: 30px;">NIP</label>
+              </div>
+              <div class="col-md-6">
+                <input type="number" class="form-control" id="exampleInputName2" value="{{value.idNumber}}" placeholder="Jane Doe" required>
+              </div>
+            </div>
+<br>
+            <div class="row">
+              <div class="col-md-4 text-left">
+                <label for="exampleInputName2" style="margin-left: 30px;">Jenis Kelamin</label>
+              </div>
+              <div class="col-md-6" >
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" value="{{value.gender}}" id="inlineRadio1"> Pria
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" value="{{value.gender}}" id="inlineRadio2"> Wanita
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6" style="left: 350px;">
+              <input type="button" value="Simpan" ng-click="putData(value.name,value.birthDate,value.positionId.id, value.idNumber, value.gender)">
+            </div>
+            <div class="col-md-6">
+              <button><a href="#!/view1">Kembali</a></button>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+    
+
+</div>
